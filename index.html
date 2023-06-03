@@ -7,8 +7,7 @@
   <title>Lenn106 - About Me</title>
   <style>
     body {
-      background-image: url("https://images.unsplash.com/photo-1499623838158-29acea518eaa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2000&q=80");
-      background-position: center;
+      background-color: #111;
       color: #ffffff;
       font-family: Arial, sans-serif;
       margin: 0;
@@ -20,6 +19,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      position: relative;
+      z-index: 2;
     }
 
     .header .back-button {
@@ -47,6 +48,8 @@
       justify-content: center;
       align-items: flex-start;
       padding: 40px;
+      position: relative;
+      z-index: 1;
     }
 
     .about-me {
@@ -92,10 +95,20 @@
     .social-links a:hover {
       text-decoration: none;
     }
+
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
   </style>
 </head>
 
 <body>
+  <div id="particles-js"></div>
   <div class="header">
     <a href="https://lenn106.github.io"><button class="back-button"></button></a>
     <h1>About Me</h1>
@@ -104,13 +117,16 @@
     <div class="about-me">
       <h2>Lenn106</h2>
       <p>
-        I like bypassing things at my school, and I honestly believe I will get introuble for anything code related because the school has no idea what i'm doing.
+        I like bypassing things at my school, and I honestly believe I will get in trouble for anything code related because the school has no idea what I'm doing.
         
-       I made the username "Lenn106" as a 9 year old signing up for GitHub thinking I would get Fortnite skins for pulling Epic Games repositories. I had no idea what I was getting myself into.
-       
+        I made the username "Lenn106" as a 9-year-old signing up for GitHub thinking I would get Fortnite skins for pulling Epic Games repositories. I had no idea what I was getting myself into.
       </p>
-            All of the UI in this website is made from scratch, and only by me. With pure html and CSS. I started programming with WhiteHat Jr. in 2020, a Indian based tutoring program for kids, now know as Byju's. I remember taking a lesson at like 2 in the afternoon  and my teacher halfway falling asleep due to the timezone differences. I couldn't understand her! She legitimately sounded like she was in a scam call center lol. I live in Mississippi, a fairly unkown place for programmers. 
-      <p>I like open source software, Guardians of the Galaxy, and for some reason I can binge watch hours worth of Youtube documentaries on video game lore and animation. I would say I have fairly basic editing skills. But you would probabally disagree once you see my Youtube channels though.<p>
+      <p>
+        All of the UI on this website is made from scratch, and only by me, using pure HTML and CSS. I started programming with WhiteHat Jr. in 2020, an Indian-based tutoring program for kids, now known as Byju's. I remember taking a lesson at like 2 in the afternoon, and my teacher halfway falling asleep due to the timezone differences. I couldn't understand her! She legitimately sounded like she was in a scam call center lol. I live in Mississippi, a fairly unknown place for programmers.
+      </p>
+      <p>
+        I like open-source software, Guardians of the Galaxy, and for some reason, I can binge-watch hours' worth of YouTube documentaries on video game lore and animation. I would say I have fairly basic editing skills. But you would probably disagree once you see my YouTube channels though.
+      </p>
       <div class="social-links">
         <a href="https://github.com/Lenn106" target="_blank">GitHub</a>
         <a href="https://twitter.com/Lenn106" target="_blank">Twitter</a>
@@ -123,6 +139,120 @@
     <p>This website is dedicated to open-source projects and is licensed under the Unlicense.</p>
     <p>© 2023 Lenn106. All rights reserved.</p>
   </div>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS('particles-js', {
+      particles: {
+        number: {
+          value: 80,
+          density: {
+            enable: true,
+            value_area: 800
+          }
+        },
+        color: {
+          value: '#ffffff'
+        },
+        shape: {
+          type: 'circle',
+          stroke: {
+            width: 0,
+            color: '#000000'
+          },
+          polygon: {
+            nb_sides: 5
+          },
+          image: {
+            src: 'img/github.svg',
+            width: 100,
+            height: 100
+          }
+        },
+        opacity: {
+          value: 0.5,
+          random: false,
+          anim: {
+            enable: false,
+            speed: 1,
+            opacity_min: 0.1,
+            sync: false
+          }
+        },
+        size: {
+          value: 3,
+          random: true,
+          anim: {
+            enable: false,
+            speed: 40,
+            size_min: 0.1,
+            sync: false
+          }
+        },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: '#ffffff',
+          opacity: 0.4,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 6,
+          direction: 'none',
+          random: false,
+          straight: false,
+          out_mode: 'out',
+          bounce: false,
+          attract: {
+            enable: false,
+            rotateX: 600,
+            rotateY: 1200
+          }
+        }
+      },
+      interactivity: {
+        detect_on: 'canvas',
+        events: {
+          onhover: {
+            enable: true,
+            mode: 'grab'
+          },
+          onclick: {
+            enable: true,
+            mode: 'push'
+          },
+          resize: true
+        },
+        modes: {
+          grab: {
+            distance: 140,
+            line_linked: {
+              opacity: 1
+            }
+          },
+          bubble: {
+            distance: 400,
+            size: 40,
+            duration: 2,
+            opacity: 8,
+            speed: 3
+          },
+          repulse: {
+            distance: 200,
+            duration: 0.4
+          },
+          push: {
+            particles_nb: 4
+          },
+          remove: {
+            particles_nb: 2
+          }
+        }
+      },
+      retina_detect: true
+    });
+  </script>
 </body>
 
 </html>
